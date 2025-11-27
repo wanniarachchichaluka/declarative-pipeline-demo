@@ -7,7 +7,7 @@ pipeline {
         sh './run_build_script.sh'  
       }
     }
-    stage('Test') {
+    stage ('Test') {
       parallel {
         stage ('Test on Windows') {
           steps {
@@ -21,7 +21,7 @@ pipeline {
         }
       }
     }
-    stage('Confirm Deploy to staging') {
+    stage ('Confirm Deploy to staging') {
       steps {
         timeout(time: 60, unit: 'SECONDS'){
           input(message: 'Okay to Deploy?', ok: 'Let\'s Do it!')
