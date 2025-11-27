@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'linux'
+    label 'linux && ruby'
   }
   stages {
     stage('Build') {
